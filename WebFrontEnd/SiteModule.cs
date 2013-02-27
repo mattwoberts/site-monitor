@@ -17,11 +17,11 @@ namespace WebFrontEnd
         {
             _documentSession = documentStore;
 
-            dynamic someModel = null;
-
             Get["/sites"] = parameters =>
                 {
-                    return View["Mockup.html", someModel];
+                    // Get the sites from the database
+                    var sites = _documentSession.Query<Site>().Take(200).ToList();
+                    return View["sites.cshtml", sites];
                 };
 
             Post["/site"] = parameters =>
@@ -38,7 +38,8 @@ namespace WebFrontEnd
                     _documentSession.Store(site);
                     _documentSession.SaveChanges();
 
-                    return HttpStatusCode.OK;
+                    return Response.AsRedirect("/sites");
+
                 };
 
 

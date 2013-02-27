@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -57,9 +58,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="success moreInfo">
-                <td>www.bbc.co.uk</td>
-                <td>Up</td>
+@foreach (var site in Model) {
+		<tr class="success moreInfo">
+                <td>@site.Url</td>
+                <td>@site.CurrentStatus</td>
                 <td class="site_collapsed">5 minutes ago</td>
             </tr>
             <tr>
@@ -67,17 +69,9 @@
                     <div class="info">Lots of information here</div>
                 </td>
             </tr>
-            <tr class="error moreInfo">
-                <td>www.somewhere.co.uk</td>
-                <td>Down</td>
-                <td class="site_collapsed">5 minutes ago</td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <div class="info">Lots of information here</div>
-                </td>
-            </tr>
-        </tbody>
+}
+
+       </tbody>
     </table>
 
     <div class="container">
