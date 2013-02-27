@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <title></title>
+
+    <style type="text/css">
+        .site_collapsed {
+            background: url(content/images/arrow_accross.gif) center right no-repeat;
+        }
+
+        .site_expanded {
+            background: url(content/images/arrow_up.gif) center right no-repeat;
+        }
+    </style>
+
+
+    <script language="javascript">
+
+        $(document).ready(function () {
+            //$('.info').hide();
+            console.log("hello");
+
+            $('.info').hide();
+
+            $('.moreInfo').click(function () {
+                $(this).next().find('.info').slideToggle('fast');
+                var elementWithIndicator = $(this).children('td:nth-child(3)');
+                elementWithIndicator.toggleClass('site_collapsed').toggleClass('site_expanded');
+            });
+
+
+        })
+
+    </script>
+
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Site Checker</a>
+            <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Url</th>
+                <th>Status</th>
+                <th>Last checked</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="success moreInfo">
+                <td>www.bbc.co.uk</td>
+                <td>Up</td>
+                <td class="site_collapsed">5 minutes ago</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="info">Lots of information here</div>
+                </td>
+            </tr>
+            <tr class="error moreInfo">
+                <td>www.somewhere.co.uk</td>
+                <td>Down</td>
+                <td class="site_collapsed">5 minutes ago</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="info">Lots of information here</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="container">
+        <form class="form-inline" method="POST" action="/site">
+                <input type="text" name="url" placeholder="Enter new Url.." />
+                <button type="submit" class="btn">Add Site</button>
+        </form>
+    </div>
+
+
+    <!--    <div class="accordion" id="accordion2">-->
+    <!--        <div class="accordion-group">-->
+    <!--            <div class="accordion-heading">-->
+    <!--                <a class="accordion-toggle error" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">-->
+    <!--                    www.bbc.co.uk-->
+    <!--                </a>-->
+    <!--            </div>-->
+    <!--            <div id="collapseOne" class="accordion-body collapse in">-->
+    <!--                <div class="accordion-inner">-->
+    <!--                    Anim pariatur cliche...-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        <div class="accordion-group">-->
+    <!--            <div class="accordion-heading">-->
+    <!--                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Collapsible Group Item #2-->
+    <!--                </a>-->
+    <!--            </div>-->
+    <!--            <div id="collapseTwo" class="accordion-body collapse">-->
+    <!--                <div class="accordion-inner">-->
+    <!--                    Anim pariatur cliche...-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+
+</body>
+</html>

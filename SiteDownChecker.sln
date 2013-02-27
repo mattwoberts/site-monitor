@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlChecker", "UrlChecker\UrlChecker.csproj", "{E1DEFB36-9549-4CCC-9789-A5BF1DF6104B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteChecker.Domain", "SiteChecker.Domain\SiteChecker.Domain.csproj", "{76319427-4906-4870-A726-6AF84EBF34E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFrontEnd", "WebFrontEnd\WebFrontEnd.csproj", "{148882CE-B19E-40E7-8257-41D6DCB6B3D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1DEFB36-9549-4CCC-9789-A5BF1DF6104B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1DEFB36-9549-4CCC-9789-A5BF1DF6104B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1DEFB36-9549-4CCC-9789-A5BF1DF6104B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1DEFB36-9549-4CCC-9789-A5BF1DF6104B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76319427-4906-4870-A726-6AF84EBF34E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76319427-4906-4870-A726-6AF84EBF34E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76319427-4906-4870-A726-6AF84EBF34E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76319427-4906-4870-A726-6AF84EBF34E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{148882CE-B19E-40E7-8257-41D6DCB6B3D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{148882CE-B19E-40E7-8257-41D6DCB6B3D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{148882CE-B19E-40E7-8257-41D6DCB6B3D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{148882CE-B19E-40E7-8257-41D6DCB6B3D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
