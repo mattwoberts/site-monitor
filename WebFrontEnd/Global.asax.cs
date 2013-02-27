@@ -10,19 +10,8 @@ namespace WebFrontEnd
 {
     public class Global : System.Web.HttpApplication
     {
-        // TODO: Make nice...
-        public static EmbeddableDocumentStore _store;
-
         protected void Application_Start(object sender, EventArgs e)
         {
-            _store = new EmbeddableDocumentStore
-            {
-                DataDirectory = "~/AppData/Database",
-                UseEmbeddedHttpServer = true,
-            };
-            _store.Configuration.Port = 8081;
-
-            _store.Initialize();
 
         }
 

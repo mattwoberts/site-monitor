@@ -5,15 +5,20 @@ using System.Web;
 using Nancy;
 using Nancy.ModelBinding;
 using SiteChecker.Domain;
+using Raven.Client;
 
 namespace WebFrontEnd
 {
-    public class Sites : NancyModule
+    public class SiteModule : NancyModule
     {
-        public Sites()
+        private IDocumentSession _documentSession;
+
+        public SiteModule(IDocumentSession documentStore)
         {
+            _documentSession = documentStore;
+
             dynamic someModel = null;
-            
+
             Get["/sites"] = parameters =>
                 {
                     return View["Mockup.html", someModel];
@@ -24,17 +29,14 @@ namespace WebFrontEnd
                     var siteUrl = Request.Form.url;
 
                     // Add the new site to the database
-                    using (var session = Global._store.OpenSession())
-                    {
-                        var site = new Site
-                            {
-                                CreationTime = DateTime.Now,
-                                CurrentStatus = SiteStatusEnum.Up,
-                                Url = siteUrl
-                            };
-                        session.Store(site);
-                        session.SaveChanges();
-                    }
+                    var site = new Site
+                        {
+                            CreationTime = DateTime.Now,
+                            CurrentStatus = SiteStatusEnum.Up,
+                            Url = siteUrl
+                        };
+                    _documentSession.Store(site);
+                    _documentSession.SaveChanges();
 
                     return HttpStatusCode.OK;
                 };
